@@ -11,6 +11,8 @@ public class Spawn2 : MonoBehaviour {
 	int count2;
 	int count4;
 
+	float Timer = 0.0f;
+
 	void Start()
 	{
 		user = GameObject.Find ("Player").GetComponent<PlayerController> ();
@@ -25,12 +27,14 @@ public class Spawn2 : MonoBehaviour {
 				Instantiate (enemy, new Vector3 (6f, Random.Range(-5f,5f),0f), enemy.transform.rotation);
 			}
 
-			if (count2 <= 0 && user.count3 >= 150) 
+			if (count2 <= 0 && user.count3 >= 150 && Timer >= 1) 
 			{
 				Instantiate(asteroid,new Vector3(12f,Random.Range(-5f,5f),0f),gameObject.transform.rotation);
+				Timer = 0;
 				count2 = 60;
 			}
 		}
+		Timer += Time.deltaTime;
 		count2 -= 1;
 	}
 }

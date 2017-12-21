@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
 	public int count;
 	public int count2;
-	public int count3;
+	public int count3; //Duration for displaying the objective. 
 
 	int maxSpeed = 10;
 

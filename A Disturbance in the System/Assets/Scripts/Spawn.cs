@@ -22,6 +22,7 @@ public class Spawn : MonoBehaviour {
 	int count2;
 	int count4 = 0;
 	float Timer = 0.0f;
+	float Timer2 = 0.0f;
 
 	int limit = 0;
 
@@ -40,9 +41,10 @@ public class Spawn : MonoBehaviour {
 			{
 				boss.rb2d.velocity = new Vector2 (-3f, 0f);
 
-				if (count2 <= 0) 
+				if (count2 <= 0 && Timer2 >= 1) 
 				{
 					Instantiate(asteroid,new Vector3(12f,Random.Range(-5f,5f),0f),gameObject.transform.rotation);
+					Timer2 = 0;
 					count2 = 60;
 				}
 
@@ -88,6 +90,7 @@ public class Spawn : MonoBehaviour {
 					part.Stop();
 					boss.change.color = new Color32(255,255,255, 255);
 				}
+				Timer2 += Time.deltaTime;
 			}
 
 			if (limit == 1) 
