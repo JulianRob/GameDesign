@@ -8,6 +8,7 @@ public class NextStage : MonoBehaviour {
 
 		public GameObject loadingScreen;
 		public Slider slider;
+		public string level;
 
 	int x = 0;
 
@@ -15,12 +16,32 @@ public class NextStage : MonoBehaviour {
 	{
 		if (GameObject.Find ("Player"))
 		{
-			if (GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber >= 75) 
+			if (GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber >= 75 && level == "Scene2") 
 			{
 				if (x == 0) 
 				{
 					loadingScreen.SetActive (true);
-					LoadLevel ("Scene2");
+					LoadLevel (level);
+					x += 1;
+				}
+			}
+
+			if (GameObject.Find ("Bird") != true && level == "Scene3") 
+			{
+				if (x == 0) 
+				{
+					loadingScreen.SetActive (true);
+					LoadLevel (level);
+					x += 1;
+				}
+			}
+
+			if (GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber >= 150 && level == "Scene4") 
+			{
+				if (x == 0) 
+				{
+					loadingScreen.SetActive (true);
+					LoadLevel (level);
 					x += 1;
 				}
 			}

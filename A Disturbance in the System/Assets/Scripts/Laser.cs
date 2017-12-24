@@ -36,4 +36,13 @@ public class Laser : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (GameObject.Find("Player"))
+		{
+			GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber += 1;
+		}
+		Destroy (gameObject);
+	}
 }
