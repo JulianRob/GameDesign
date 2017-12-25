@@ -20,3 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene4.unity
     guid: 1daaf6db68fb546439aa797a4d25a01b
+  - enabled: 1
+    path: Assets/Scenes/Scene5.unity
+    guid: 29ff40f9293db4bd2889a6e8d8161e8c
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: ca90b5fec2bfb44b890dbf871ccc01e1

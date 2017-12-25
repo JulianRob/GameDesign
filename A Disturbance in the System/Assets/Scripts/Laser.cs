@@ -43,6 +43,10 @@ public class Laser : MonoBehaviour {
 		{
 			GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber += 1;
 		}
-		Destroy (gameObject);
+
+		if (other.gameObject.tag == "shield") 
+		{
+			Destroy (gameObject);
+		}
 	}
 }

@@ -26,7 +26,7 @@ public class NextStage : MonoBehaviour {
 				}
 			}
 
-			if (GameObject.Find ("Bird") != true && level == "Scene3") 
+			if (GameObject.Find ("Bird") == false && level == "Scene3") 
 			{
 				if (x == 0) 
 				{
@@ -37,6 +37,16 @@ public class NextStage : MonoBehaviour {
 			}
 
 			if (GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber >= 150 && level == "Scene4") 
+			{
+				if (x == 0) 
+				{
+					loadingScreen.SetActive (true);
+					LoadLevel (level);
+					x += 1;
+				}
+			}
+
+			if (GameObject.Find ("Mage") == false && level == "Scene5") 
 			{
 				if (x == 0) 
 				{
