@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\SceneSwitch.cs" />
      <Compile Include="Assets\Scripts\ScrollingBackground.cs" />
      <Compile Include="Assets\Scripts\Shield.cs" />
+     <Compile Include="Assets\Scripts\Shine.cs" />
      <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Scripts\Spawn2.cs" />
      <Compile Include="Assets\Scripts\Stay.cs" />

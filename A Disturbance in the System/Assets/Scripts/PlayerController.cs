@@ -24,10 +24,15 @@ public class PlayerController : MonoBehaviour
 
 	public GameObject Particle;
 	public GameObject Shine;
+	public AudioSource ShineSound;
 
 	public int count;
 	public int count2;
 	public int count3; //Duration for displaying the objective. 
+	int count4;
+
+	bool reflect = false;
+
 
 	int maxSpeed = 10;
 
@@ -44,6 +49,9 @@ public class PlayerController : MonoBehaviour
 	bool death2 = false;
 
 	bool power = false; //Big particle explosion by pressing J
+
+	public Slider slider;
+	float mana = 50f;
 
 	void Start () 
 	{
@@ -243,18 +251,55 @@ public class PlayerController : MonoBehaviour
 		}
 		*/
 
-		if (Input.GetKey (KeyCode.K)) 
+		if (Input.GetKeyDown (KeyCode.K) == true && healthNumber > 0)
+		{
+			if (slider.value >= 10 && count4 == 0) 
+			{
+				mana -= 10;
+				reflect = true;
+			}
+		}
+
+		if (reflect == true && count4 <= 10) 
 		{
 			Shine.SetActive (true);
-		} 
+			if (count4 <= 0) 
+			{
+				ShineSound.Play ();
+			}
+			count4 += 1;
+		}
 		else 
 		{
 			Shine.SetActive (false);
+			count4 = 0;
+			reflect = false;
+			/*
+			if(count4 >= 20)
+			{
+				count4 += 1;
+			}
+
+			if (count4 >= 60) 
+			{
+				count4 = 0;
+			}
+			*/
 		}
 
-		count -= 1;
+		if (count >= -20) 
+		{
+			count -= 1;
+		}
+
+		if (mana+.01 <= 50) 
+		{
+			mana += .02f;
+		}
+
 		healthText.text = "Health: " + healthNumber.ToString();
 		scoreText.text = "Score: " + scoreNumber.ToString();
+		slider.value = mana;
 	}
 
 	void OnCollisionEnter2D(Collision2D col)
