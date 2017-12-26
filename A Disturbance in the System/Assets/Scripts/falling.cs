@@ -9,6 +9,8 @@ public class falling : MonoBehaviour {
 	public AudioClip otherClip;
 	public AudioSource audioSource;
 
+	public bool finished = false;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -26,6 +28,7 @@ public class falling : MonoBehaviour {
 		else 
 		{
 			rb2d.velocity = new Vector2 (0f,0f);
+			finished = true;
 		}
 
 	}

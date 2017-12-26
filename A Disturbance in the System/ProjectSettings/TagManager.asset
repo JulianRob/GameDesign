@@ -12,6 +12,7 @@ TagManager:
   - powerUp
   - fire
   - shield
+  - orb
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - powerUp
   - Fire
   - Mage
-  - 
+  - orb
   - 
   - 
   - 

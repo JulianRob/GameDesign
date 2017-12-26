@@ -46,7 +46,7 @@ public class NextStage : MonoBehaviour {
 				}
 			}
 
-			if (GameObject.Find ("Mage") == false && level == "Scene5") 
+			if (GameObject.Find ("Mage") == false && level == "Credits") 
 			{
 				if (x == 0) 
 				{
@@ -54,6 +54,16 @@ public class NextStage : MonoBehaviour {
 					LoadLevel (level);
 					x += 1;
 				}
+			}
+		}
+
+		if (GameObject.Find ("User") == true && GameObject.Find("User").GetComponent<falling>().finished == true && level == "Winner") 
+		{
+			if (x == 0) 
+			{
+				loadingScreen.SetActive (true);
+				LoadLevel (level);
+				x += 1;
 			}
 		}
 	}

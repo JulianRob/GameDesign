@@ -33,7 +33,7 @@ public class Spawn : MonoBehaviour {
 		Physics2D.IgnoreLayerCollision(9,13,true);
 	}
 
-	void Update () 
+	void FixedUpdate () 
 	{
 		if (GameObject.Find ("Player") && GameObject.Find("Bird")) 
 		{
@@ -66,12 +66,12 @@ public class Spawn : MonoBehaviour {
 				if (boss.hp <= 75 && Timer <= 4.5) //180
 				{
 					boss.change.color = new Color32(255,boss.color,boss.color, 255);
-					if (boss.color > 1)
+					if (boss.color >= 3)
 					{
-						boss.color -= 2;
+						boss.color -= 3;
 					}
 
-					if (boss.color <=1) 
+					if (boss.color < 3) 
 					{
 						boss.color = 0;
 						if (once == 0) 

@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 	public GameObject instruction;
 
 	public GameObject Particle;
+	public GameObject Shine;
 
 	public int count;
 	public int count2;
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
 	bool death2 = false;
 
-	bool power = false;
+	bool power = false; //Big particle explosion by pressing J
 
 	void Start () 
 	{
@@ -183,7 +184,7 @@ public class PlayerController : MonoBehaviour
 			anim.SetInteger ("State", 0);
 		}
 
-		if (count3 <= 150) 
+		if (count3 <= 150) //Control for objective.
 		{
 			count3 += 1;
 		} 
@@ -197,6 +198,58 @@ public class PlayerController : MonoBehaviour
 		if (death2 == true) 
 		{
 			rb2d.velocity = new Vector2 (-5f,0f);
+		}
+
+		//Gives a boost
+		/*
+		if (Input.GetKey (KeyCode.K) && healthNumber > 0) 
+		{
+			if (rb2d.velocity.x > 0 && rb2d.velocity.y > 0) 
+			{
+				rb2d.velocity = new Vector2 (rb2d.velocity.x+5, rb2d.velocity.y+5);
+			}
+			else if (rb2d.velocity.x < 0 && rb2d.velocity.y < 0) 
+			{
+				rb2d.velocity = new Vector2 (rb2d.velocity.x-5, rb2d.velocity.y-5);
+			}
+			else if (rb2d.velocity.x > 0 && rb2d.velocity.y < 0) 
+			{
+				rb2d.velocity = new Vector2 (rb2d.velocity.x+5, rb2d.velocity.y-5);
+			}
+			else if (rb2d.velocity.x < 0 && rb2d.velocity.y > 0) 
+			{
+				rb2d.velocity = new Vector2 (rb2d.velocity.x-5, rb2d.velocity.y+5);
+			}
+			else if (rb2d.velocity.x == 0 && rb2d.velocity.y == 0) 
+			{
+				rb2d.velocity = new Vector2 (rb2d.velocity.x, rb2d.velocity.y);
+			}
+			else if (rb2d.velocity.x == 0 && rb2d.velocity.y > 0) 
+			{
+				rb2d.velocity = new Vector2 (rb2d.velocity.x, rb2d.velocity.y+5);
+			}
+			else if (rb2d.velocity.x == 0 && rb2d.velocity.y < 0) 
+			{
+				rb2d.velocity = new Vector2 (rb2d.velocity.x, rb2d.velocity.y-5);
+			}
+			else if (rb2d.velocity.x > 0 && rb2d.velocity.y == 0) 
+			{
+				rb2d.velocity = new Vector2 (rb2d.velocity.x+5, rb2d.velocity.y);
+			}
+			else if (rb2d.velocity.x < 0 && rb2d.velocity.y == 0) 
+			{
+				rb2d.velocity = new Vector2 (rb2d.velocity.x-5, rb2d.velocity.y);
+			}
+		}
+		*/
+
+		if (Input.GetKey (KeyCode.K)) 
+		{
+			Shine.SetActive (true);
+		} 
+		else 
+		{
+			Shine.SetActive (false);
 		}
 
 		count -= 1;
@@ -246,6 +299,25 @@ public class PlayerController : MonoBehaviour
 			power = true;
 			Destroy (col.gameObject);
 		}
+
+		if (col.gameObject.tag == "orb") 
+		{
+			if (healthNumber >= 10) 
+			{
+				healthNumber -= 10;
+			}
+			else 
+			{
+				healthNumber = 0;
+			}
+
+			hit.Play();
+			Destroy (col.gameObject);
+			if (healthNumber <= 0)
+			{
+				death ();
+			}
+		}
 	}
 
 	void OnParticleCollision(GameObject other)
@@ -265,6 +337,7 @@ public class PlayerController : MonoBehaviour
 	void death()
 	{
 		death2 = true;
+		Physics2D.IgnoreLayerCollision(8,17,true);
 		healthText.text = "Health: " + healthNumber.ToString();
 		anim.SetInteger ("State", 2);
 		restart.SetActive (true);

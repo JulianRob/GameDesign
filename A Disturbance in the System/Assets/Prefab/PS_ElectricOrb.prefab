@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4826226906262250}
   - component: {fileID: 198231007223247356}
   - component: {fileID: 199709889991808852}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Electric Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4402607900946334}
   - component: {fileID: 198155935197369824}
   - component: {fileID: 199604286206952192}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Outward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4294314384330038}
   - component: {fileID: 198902002682438464}
   - component: {fileID: 199094305820124130}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,9 +70,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4111215809056858}
-  m_Layer: 0
+  - component: {fileID: 114572313826235280}
+  - component: {fileID: 50703974207946660}
+  - component: {fileID: 58372441840801234}
+  m_Layer: 17
   m_Name: PS_ElectricOrb
-  m_TagString: Untagged
+  m_TagString: orb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720503629996926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.24, y: 2.63, z: 1.92592}
+  m_LocalPosition: {x: -11.517113, y: -3.53149, z: 1.92592}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4294314384330038}
@@ -132,6 +135,52 @@ Transform:
   m_Father: {fileID: 4111215809056858}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!50 &50703974207946660
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720503629996926}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &58372441840801234
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720503629996926}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &114572313826235280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720503629996926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7542e9c90184bf788f673e7563a4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198155935197369824
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -192,7 +241,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -368402493
+  randomSeed: -1165294986
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3509,7 +3558,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1365714215
+  randomSeed: 299927325
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6826,7 +6875,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 22365325
+  randomSeed: -2024231684
   InitialModule:
     serializedVersion: 3
     enabled: 1

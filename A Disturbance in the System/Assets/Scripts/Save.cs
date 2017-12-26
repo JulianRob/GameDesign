@@ -8,7 +8,8 @@ public class Save : MonoBehaviour
 	
 	void Update()
 	{
-		if (GameObject.Find ("Player")) {
+		if (GameObject.Find ("Player")) 
+		{
 			score = GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber;
 		} 
 		else 
