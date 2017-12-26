@@ -320,25 +320,6 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (col.gameObject.tag == "laser2") 
-		{
-			if (healthNumber >= 10) 
-			{
-				healthNumber -= 10;
-			}
-			else 
-			{
-				healthNumber = 0;
-			}
-
-			hit.Play();
-			Destroy (col.gameObject);
-			if (healthNumber <= 0)
-			{
-				death ();
-			}
-		}
-
 		if (col.gameObject.tag == "powerUp") 
 		{
 			power = true;
@@ -376,6 +357,28 @@ public class PlayerController : MonoBehaviour
 		if (healthNumber <= 0)
 		{
 			death ();
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.gameObject.tag == "laser2" && GameObject.Find("Shine") == false) 
+		{
+			if (healthNumber >= 10) 
+			{
+				healthNumber -= 10;
+			}
+			else 
+			{
+				healthNumber = 0;
+			}
+
+			hit.Play();
+			Destroy (col.gameObject);
+			if (healthNumber <= 0)
+			{
+				death ();
+			}
 		}
 	}
 

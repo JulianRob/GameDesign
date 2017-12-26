@@ -66,6 +66,25 @@ public class Asteroid : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (death == false) 
+		{
+			if (col.gameObject.tag == "laser2" && col.gameObject.GetComponent<Laser2>().direction == 1) 
+			{
+				death = true;
+				anim.SetInteger ("State", 1);
+				explosion.Play ();
+				if (GameObject.Find ("Player"))
+				{
+					GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber += 1;
+				}
+				Destroy (col.gameObject);
+				Destroy (gameObject, 1f / 3f);
+			}
+		}
+	}
+
 	void OnParticleCollision(GameObject other)
 	{
 		if (death == false) 

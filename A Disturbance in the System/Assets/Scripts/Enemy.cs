@@ -68,6 +68,29 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (death == false) 
+		{
+			if (col.gameObject.tag == "laser2" && col.gameObject.GetComponent<Laser2>().direction == 1) 
+			{
+				health = 0;
+				hit.Play ();
+				if (health <= 0) 
+				{
+					death = true;
+					if (GameObject.Find ("Player")) 
+					{
+						GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber += 5;
+					}
+					hit2.Play ();
+					anim.SetInteger ("State", 1);
+					Destroy (gameObject, 5f / 6f);
+				}
+			}
+		}
+	}
+
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (death == false) 

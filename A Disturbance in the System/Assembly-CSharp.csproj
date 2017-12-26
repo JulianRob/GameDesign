@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Laser2.cs" />
      <Compile Include="Assets\Scripts\LevelLoader.cs" />
      <Compile Include="Assets\Scripts\Mage.cs" />
+     <Compile Include="Assets\Scripts\Message.cs" />
      <Compile Include="Assets\Scripts\NextStage.cs" />
      <Compile Include="Assets\Scripts\orb.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
@@ -75,7 +76,6 @@
      <Compile Include="Assets\Scripts\SceneSwitch.cs" />
      <Compile Include="Assets\Scripts\ScrollingBackground.cs" />
      <Compile Include="Assets\Scripts\Shield.cs" />
-     <Compile Include="Assets\Scripts\Shine.cs" />
      <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Scripts\Spawn2.cs" />
      <Compile Include="Assets\Scripts\Stay.cs" />
