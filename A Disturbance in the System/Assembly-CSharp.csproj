@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Enemy2Movement.cs" />
+     <Compile Include="Assets\HomingMissile.cs" />
      <Compile Include="Assets\Scripts\Asteroid.cs" />
      <Compile Include="Assets\Scripts\Background.cs" />
      <Compile Include="Assets\Scripts\Beginning.cs" />
@@ -67,6 +69,7 @@
      <Compile Include="Assets\Scripts\Message.cs" />
      <Compile Include="Assets\Scripts\NextStage.cs" />
      <Compile Include="Assets\Scripts\orb.cs" />
+     <Compile Include="Assets\Scripts\pause.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Restart.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
@@ -79,6 +82,8 @@
      <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Scripts\Spawn2.cs" />
      <Compile Include="Assets\Scripts\Stay.cs" />
+     <Compile Include="Assets\Scripts\Winner.cs" />
+     <Compile Include="Assets\Spawn3.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

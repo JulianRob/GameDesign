@@ -13,6 +13,7 @@ public class LevelLoader : MonoBehaviour {
 	public GameObject duck1;
 	public GameObject duck2;
 	public GameObject duck3;
+	public GameObject title;
 
 	public void LoadLevel(string name)
 	{
@@ -27,6 +28,7 @@ public class LevelLoader : MonoBehaviour {
 		duck1.SetActive (false);
 		duck2.SetActive (false);
 		duck3.SetActive (false);
+		title.SetActive (false);
 		
 		while (!operation.isDone) 
 		{
@@ -36,5 +38,10 @@ public class LevelLoader : MonoBehaviour {
 
 			yield return null;
 		}
+	}
+
+	public void MenuQuitButton()
+	{
+		Application.Quit ();
 	}
 }

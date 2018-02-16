@@ -14,6 +14,8 @@ TagManager:
   - shield
   - orb
   - Shine
+  - enemy2
+  - HomingMissile
   layers:
   - Default
   - TransparentFX
@@ -34,8 +36,8 @@ TagManager:
   - Mage
   - orb
   - Shine
-  - 
-  - 
+  - HomingMissile
+  - Enemy2
   - 
   - 
   - 

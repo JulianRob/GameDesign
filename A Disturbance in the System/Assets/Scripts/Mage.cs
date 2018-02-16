@@ -9,6 +9,9 @@ public class Mage : MonoBehaviour {
 	float count = 0;
 	int count2 = 0;
 	int count3 = 0;
+	int count4 = 0;
+	int count5 = 0;
+	int Timer = 0;
 	public int hp = 100;
 	public Slider slider;
 	public AudioSource hit;
@@ -58,7 +61,7 @@ public class Mage : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
-		if (hp > 50 && GameObject.Find("Player") == true) 
+		if (hp >= 100 && GameObject.Find("Player") == true) 
 		{
 			if (count3 == 0) 
 			{
@@ -84,6 +87,47 @@ public class Mage : MonoBehaviour {
 			count3 += 1;
 		}
 
+		if (hp < 100 && Timer <= 180 && GameObject.Find ("Player") == true) //120
+		{
+			if (count4 == 0)
+			{
+				Instantiate (orb, new Vector3 (4.5f, 3f, 0f), gameObject.transform.rotation);
+			}
+			Timer += 1;
+		}
+
+		if (Timer >= 180 && Timer <= 300) 
+		{
+			Timer += 1;
+		}
+
+		if (hp < 100 && hp > 50 && Timer >= 300 && GameObject.Find("Player") == true) 
+		{
+			if (count5 == 0) 
+			{
+				Instantiate(orb,new Vector3(1f,4f,0f),gameObject.transform.rotation);
+			}
+
+			if (count5 == 30) 
+			{
+				Instantiate(orb,new Vector3(8f,4f,0f),gameObject.transform.rotation);
+			}
+
+			if (count5 == 60) 
+			{
+				Instantiate(orb,new Vector3(8f,-4.5f,0f),gameObject.transform.rotation);
+			}
+
+			if (count5 == 90)
+			{
+				Instantiate(orb,new Vector3(1f,-4.5f,0f),gameObject.transform.rotation);
+				count5 = -30;
+			}
+
+			count5 += 1;
+		}
+			
+
 		if (hp <= 50 && GameObject.Find("Player") == true) 
 		{
 				if (count2 == 0) 
@@ -92,40 +136,40 @@ public class Mage : MonoBehaviour {
 					Instantiate(orb,new Vector3(2f,3f,0f),gameObject.transform.rotation);
 				}
 
-				if (count2 == 30) 
+				if (count2 == 15) //30
 				{
 					Instantiate(orb,new Vector3(4.5f,4f,0f),gameObject.transform.rotation);
 				}
 
-				if (count2 == 60) 
+				if (count2 == 30) 
 				{
 					Instantiate(orb,new Vector3(7f,3f,0f),gameObject.transform.rotation);
 				}
 
-				if (count2 == 90)
+				if (count2 == 45)
 				{
 					Instantiate(orb,new Vector3(7.5f,0f,0f),gameObject.transform.rotation);
 				}
 
-				if (count2 == 120) 
+				if (count2 == 60) 
 				{
 					Instantiate(orb,new Vector3(7f,-4f,0f),gameObject.transform.rotation);
 				}
 
-				if (count2 == 150) 
+				if (count2 == 75) 
 				{
 					Instantiate(orb,new Vector3(4.5f,-5f,0f),gameObject.transform.rotation);
 				}
 
-				if (count2 == 180)
+				if (count2 == 90)
 				{
 					Instantiate(orb,new Vector3(2f,-4f,0f),gameObject.transform.rotation);
 				}
 
-				if (count2 == 210)
+				if (count2 == 105)
 				{
 					Instantiate(orb,new Vector3(1.5f,0f,0f),gameObject.transform.rotation);
-					count2 = -30;
+					count2 = -20;
 				}
 				count2 += 1;
 		}

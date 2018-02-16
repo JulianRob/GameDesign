@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 	public int count;
 	public int count2;
 	public int count3; //Duration for displaying the objective. 
-	int count4;
+	int count4 = 0;
 
 	bool reflect = false;
 
@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
 		}
 		count = 0;
 		Physics2D.IgnoreLayerCollision(8,10,false);
+		Physics2D.IgnoreLayerCollision(8,17,false);
 		//Physics2D.IgnoreLayerCollision(8,15,false);
 	} 
 		
@@ -164,9 +165,9 @@ public class PlayerController : MonoBehaviour
 				rb2d.velocity = new Vector2 (0f, rb2d.velocity.y);
 			}
 
-			if (gameObject.transform.position.x >= 8.8) 
+			if (gameObject.transform.position.x >= -1)  //8.8
 			{
-				gameObject.transform.position = new Vector2 (8.8f, gameObject.transform.position.y);
+				gameObject.transform.position = new Vector2 (-1f, gameObject.transform.position.y);
 				rb2d.velocity = new Vector2 (0f, rb2d.velocity.y);
 			}
 
@@ -251,7 +252,7 @@ public class PlayerController : MonoBehaviour
 		}
 		*/
 
-		if (Input.GetKeyDown (KeyCode.K) == true && healthNumber > 0)
+		if (Input.GetKey (KeyCode.K) == true && healthNumber > 0)
 		{
 			if (slider.value >= 10 && count4 == 0) 
 			{
@@ -380,16 +381,55 @@ public class PlayerController : MonoBehaviour
 				death ();
 			}
 		}
+
+		if (col.gameObject.tag == "orb" && GameObject.Find("Shine") == false) 
+		{
+			if (healthNumber >= 10) 
+			{
+				healthNumber -= 10;
+			}
+			else 
+			{
+				healthNumber = 0;
+			}
+
+			hit.Play();
+			Destroy (col.gameObject);
+			if (healthNumber <= 0)
+			{
+				death ();
+			}
+		}
+
+		if (col.gameObject.tag == "HomingMissile" && GameObject.Find("Shine") == false) 
+		{
+			if (healthNumber >= 10*GameObject.Find("HomingMissile2(Clone)").GetComponent<HomingMissile>().power) 
+			{
+				healthNumber -= 10*GameObject.Find("HomingMissile2(Clone)").GetComponent<HomingMissile>().power;
+			}
+			else 
+			{
+				healthNumber = 0;
+			}
+
+			hit.Play();
+			Destroy (col.gameObject);
+			if (healthNumber <= 0)
+			{
+				death ();
+			}
+		}
+
 	}
 
 	void death()
 	{
 		death2 = true;
 		Physics2D.IgnoreLayerCollision(8,17,true);
+		Physics2D.IgnoreLayerCollision(8,10,true);
 		healthText.text = "Health: " + healthNumber.ToString();
 		anim.SetInteger ("State", 2);
 		restart.SetActive (true);
-		Physics2D.IgnoreLayerCollision(8,10,true);
 		scoreNumber = 0;
 		Destroy (gameObject,5f/6f);
 	}

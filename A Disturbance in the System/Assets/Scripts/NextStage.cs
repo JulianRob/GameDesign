@@ -11,12 +11,21 @@ public class NextStage : MonoBehaviour {
 		public string level;
 
 	int x = 0;
+	int points = 0;
+
+	void Start()
+	{
+		if(GameObject.Find("Save"))
+			{
+				points = GameObject.Find ("Save").GetComponent<Save> ().score;
+			}
+	}
 
 	void Update()
 	{
 		if (GameObject.Find ("Player"))
 		{
-			if (GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber >= 75 && level == "Scene2") 
+			if (GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber - points >= 75 && level == "Scene2") 
 			{
 				if (x == 0) 
 				{
@@ -36,7 +45,7 @@ public class NextStage : MonoBehaviour {
 				}
 			}
 
-			if (GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber >= 150 && level == "Scene4") 
+			if (GameObject.Find ("Player").GetComponent<PlayerController> ().scoreNumber - points >= 150 && level == "Scene4") 
 			{
 				if (x == 0) 
 				{

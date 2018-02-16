@@ -7,6 +7,7 @@ public class orb : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	private Transform target;
 	bool look = false;
+	int direction = 0;
 
 	int count = 0;
 
@@ -21,7 +22,7 @@ public class orb : MonoBehaviour {
 	void FixedUpdate () 
 	{
 		count += 1;
-		if (count >= 240) 
+		if (count >= 120) 
 		{
 			
 			if (look == false)
@@ -29,9 +30,34 @@ public class orb : MonoBehaviour {
 				transform.LookAt(target);
 				look = true;
 			}
-			rb2d.AddForce(transform.forward*50);
+			if (direction == 0) 
+			{
+				rb2d.AddForce (transform.forward * 50);
+			} 
+			else 
+			{
+				rb2d.velocity = (-transform.forward * 25);
+				//rb2d.AddForce (-transform.forward * 50);
+			}
 
-			/*
+		}
+
+		if (transform.position.x <= -10 || transform.position.x >= 10 || transform.position.y >= 7 || transform.position.y <= -7) 
+		{
+			Destroy (gameObject);
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.gameObject.tag == "Shine")
+		{
+			direction = 1;
+		}
+	}
+}
+
+/*
 			if (GameObject.Find ("Player").GetComponent<PlayerController> ().transform.position.y <= transform.position.y) 
 			{
 				rb2d.AddForce (-transform.up * 20);
@@ -43,11 +69,3 @@ public class orb : MonoBehaviour {
 				//rb2d.velocity = new Vector2(rb2d.velocity.x,7f);
 			}
 			*/
-		}
-
-		if (transform.position.x <= -10 || transform.position.x >= 10 || transform.position.y >= 7 || transform.position.y <= -7) 
-		{
-			Destroy (gameObject);
-		}
-	}
-}

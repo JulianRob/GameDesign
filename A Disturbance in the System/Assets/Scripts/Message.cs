@@ -43,7 +43,7 @@ public class Message : MonoBehaviour
 				color = 0;
 				limit = 1;
 				count = 0;
-				text1.text = "This was supposed to be an emotional crashing scene.";
+				text1.text = "This was supposed to be an emotional crashing scene."; //This was supposed to be an emotional crashing scene.
 			}
 		}
 
@@ -69,7 +69,7 @@ public class Message : MonoBehaviour
 				color = 0;
 				limit = 2;
 				count = 0;
-				text1.text = "But I ran out of time.";
+				text1.text = "But I didn't think you would make it this far.";
 			}
 		}
 
@@ -121,7 +121,7 @@ public class Message : MonoBehaviour
 				color = 0;
 				limit = 4;
 				count = 0;
-				text1.text = "Good Job!";
+				text1.text = "(Spaceship landing sound.)";
 			}
 		}
 

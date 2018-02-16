@@ -76,6 +76,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+36e54fba6a6e78e59a4098ea8b57ff50 Assembly-CSharp.dll:.pause
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Coin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneSwitch
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Rotate
@@ -117,8 +118,12 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+b6b69b1a283c1ac93de75a2a1165afb7 Assembly-CSharp.dll:.HomingMissile
 549fb4a4f11569c9ab0c24b86c55102c Assembly-CSharp.dll:.Asteroid
+f4eb93ec9fdae092a5a7eb85844737de Assembly-CSharp.dll:.Spawn3
+43653d1d9f8637d16b1bc813a9450c06 Assembly-CSharp.dll:.Enemy2Movement
 42526854986fb5dfa600098af4c21d03 Assembly-CSharp.dll:.Laser2
+cf47bb0ba8cf144cc26be8f528ac277e Assembly-CSharp.dll:.Winner
 78b5887a667687400138b2ce8b20b045 Assembly-CSharp.dll:.NextStage
 250fb0592e82870d90ff5a7c65021d1b Assembly-CSharp.dll:.Spawn
 e5fcb4a7c635b9539585f35c7b4d2f49 Assembly-CSharp.dll:.Spawn2
@@ -157,7 +162,7 @@ be281a84cbe5eaae1f4085724b2dbc99 Assembly-CSharp.dll:.Bird
 0185646825a3e236ace1446a34f1d6a2 Assembly-CSharp.dll:.Message
 7c6fb094f5246b8f18656fe8bd7cfc58 Assembly-CSharp.dll:.Save
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Restart
-bfa491aa5d6106747010eda4eb1ff714 Assembly-CSharp.dll:.LevelLoader
+28c44f6fe68fc99bc90213645b3fb4a5 Assembly-CSharp.dll:.LevelLoader
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Laser
 5d939d4cfbff2d7fdce727ebd464723d Assembly-CSharp.dll:.Enemy
 dd5481137759597d614818793c90a7fe Assembly-CSharp.dll:.ScrollingBackground

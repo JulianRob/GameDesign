@@ -5,6 +5,7 @@ using UnityEngine;
 public class Laser : MonoBehaviour {
 
 	private Rigidbody2D rb2d;
+	//int direction = 0;
 
 	// Use this for initialization
 	void Start () 
@@ -45,6 +46,11 @@ public class Laser : MonoBehaviour {
 		}
 
 		if (other.gameObject.tag == "shield") 
+		{
+			Destroy (gameObject);
+		}
+
+		if (other.gameObject.tag == "enemy2") 
 		{
 			Destroy (gameObject);
 		}
